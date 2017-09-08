@@ -5,5 +5,6 @@ from generate import generate
 
 def main(filename, n):
 	rules = load(filename)
+	generate(rules)
 
 main('grammar.gr', 1)
