@@ -11,19 +11,13 @@ def generate(rules):
 			if (tokens[i] in rules): # not a terminal
 				possibles = rules[tokens[i]] # all possible RHS for given token
 
-				
 				replacementInd = np.random.choice(len(possibles))
 				replacement = possibles[replacementInd]
 				tokens[i] = ' '.join(replacement)
 				sentence = ' '.join(tokens)
 				tokens = sentence.split()
 
-
-
-
-
-	print sentence
-
+	#print sentence
 	return sentence
 
 # Function to check if a set of tokens consists only of terminals

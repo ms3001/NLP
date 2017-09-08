@@ -18,12 +18,14 @@ def load(filename):
 			continue
 
 		
-		freq = tokens[0]
+		relodds = tokens[0]
 		lhs = tokens[1]
 		rhs = tokens[2::]
 		rules.setdefault(lhs,[])
-		rules[lhs].append(rhs)
+		rules[lhs].append([relodds rhs])
 	gramm.close()	
+
+	# Turn relodds into probabilities
 
 	print rules
 	return rules
