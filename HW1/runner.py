@@ -6,5 +6,6 @@ from generate import generate
 def main(filename, n):
 	rules = load(filename)
 	generate(rules)
+ # Implement multiple sentences
 
 main('grammar.gr', 1)
