@@ -5,7 +5,8 @@ from generate import generate
 
 def main(filename, n):
 	rules = load(filename)
-	generate(rules)
+	for i in xrange(n):
+		print generate(rules)
  # Implement multiple sentences
 
-main('grammar.gr', 1)
+main('grammar.gr', 5)

@@ -22,8 +22,9 @@ def load(filename):
 		lhs = tokens[1]
 		rhs = tokens[2::]
 		rules.setdefault(lhs,[])
-		rules[lhs].append([relodds rhs])
-	gramm.close()	
+		#rules[lhs].append([relodds rhs])
+		rules[lhs].append(rhs)
+	gramm.close()
 
 	# Turn relodds into probabilities
 
