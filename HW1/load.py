@@ -2,8 +2,8 @@
 # Function to load a given grammar file into a dictionary
 def load(filename):
 	gramm = open(filename, "r")
-	prerules = {}
 	rules = {}
+
 	while True:
 		line = gramm.readline()
 		if not line: # reached end of file
@@ -21,21 +21,21 @@ def load(filename):
 		relodds = tokens[0]
 		lhs = tokens[1]
 		rhs = tokens[2::]
-		prerules.setdefault(lhs,[])
-		prerules[lhs].append([relodds, rhs])
+		rules.setdefault(lhs,[])
+		rules[lhs].append([relodds, rhs])
 		#rules[lhs].append(rhs)
 	gramm.close()
 
 	# Section below turn relative odds of occurence into probabilities
-	for lhs in prerules:
+	for lhs in rules:
 		total = 0
-		possibles = prerules[lhs]
+		possibles = rules[lhs]
 		for occurence in possibles:
-			total += float(occurence[0])
+			total += float(occurence[0]) # getting the relative odds of that occurrence
 		for occurence in possibles:
 			occurence[0] = float(occurence[0]) / total
 
-	print prerules
+	print rules
 	return rules
 
 

@@ -6,14 +6,16 @@ def generate(rules):
 	tokens = sentence.split()
 
 	while(notDone(tokens, rules)):
-
 		for i in range(len(tokens)):
 			if (tokens[i] in rules): # not a terminal
 				possibles = rules[tokens[i]] # all possible RHS for given token
-
-				replacementInd = np.random.choice(len(possibles))
+				prob = []
+				for occurence in possibles:
+	 				prob.append(occurence[0])
+		
+				replacementInd = np.random.choice(len(possibles), p = prob)
 				replacement = possibles[replacementInd]
-				tokens[i] = ' '.join(replacement)
+				tokens[i] = ' '.join(replacement[1])
 				sentence = ' '.join(tokens)
 				tokens = sentence.split()
 
