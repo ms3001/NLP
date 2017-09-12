@@ -19,7 +19,6 @@ def generate(rules):
 				sentence = ' '.join(tokens)
 				tokens = sentence.split()
 
-	#print sentence
 	return sentence
 
 # Function to check if a set of tokens consists only of terminals
