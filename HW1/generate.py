@@ -1,13 +1,23 @@
 import numpy as np
 
 # Function to generate a sentence given a set of rules.
-def generate(rules):
+def generate(rules, tree):
 	sentence = 'ROOT'
 	tokens = sentence.split()
 
+	treeString = ''
+
+
+
+	i = 0
 	while(notDone(tokens, rules)):
-		for i in range(len(tokens)):
+
+		#for i in range(mini, len(tokens)):
+			#print sentence
+
 			if (tokens[i] in rules): # not a terminal
+				treeString = treeString + ' ' + tokens[i]
+
 				possibles = rules[tokens[i]] # all possible RHS for given token
 				prob = []
 				for occurence in possibles:
@@ -19,6 +29,17 @@ def generate(rules):
 				sentence = ' '.join(tokens)
 				tokens = sentence.split()
 
+			else: # we have reached a terminal
+				treeString = treeString + ' ' + tokens[i]
+				i = i + 1
+
+
+
+
+
+	if (tree):
+		treeString = treeString + ' '  +  sentence.split()[-2] + ' ' + sentence.split()[-1]
+		print treeString
 	return sentence
 
 # Function to check if a set of tokens consists only of terminals

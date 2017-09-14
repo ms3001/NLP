@@ -35,7 +35,7 @@ def load(filename):
 		for occurence in possibles:
 			occurence[0] = float(occurence[0]) / total
 
-	print rules
+	#print rules
 	return rules
 
 
