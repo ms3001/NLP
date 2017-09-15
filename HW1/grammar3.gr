@@ -4,9 +4,9 @@
 1	ROOT	is it true that S ?     # mixing terminals and nonterminals is ok.
 
 1	S 	NP VP 				# Most common sentence structure should be NP VP
-.33 	S 	NP thought that NP VP 	# less common for this
-.33 	S 	it WV NP that NP VP 	# less common for this
-.33 	S 	that S WV NP 	# less common for this
+.33 	S 	NP thought that S 	# less common for this
+.33 	S 	it WV NP that S 	# less common for this
+.1 	S 	that S WV NP 	# less common so less 'that that that' sentences
 
 
 1 	NP 	Det Noun 	# make non names and regular nouns equally likely
@@ -38,6 +38,7 @@
 1	Noun	chief of staff
 1	Noun	floor
 1 	Noun 	desk
+1 	Noun 	proposal
 
 1 	Adj green 			# all nouns are equally likely
 1 	Adj red
@@ -45,12 +46,14 @@
 1	Adj	delicious
 1	Adj	perplexed
 1	Adj	pickled
+1 	Adj very
 
 1 	TV 	pickled 		# All transitive verbs are equally likely
 1 	TV 	ate
 1	TV	kissed
 1	TV	wanted
 1	TV	understood
+1 	TV 	worked
 
 
 1 	IV 	thought 		# All intrans verbs are equally likely
